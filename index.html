@@ -15,10 +15,16 @@
         <form class="d-flex flex-row" action="#">
             <div class="card">
                 <div class="card-body">
+                    <p>Presets</p>
+                    <select onchange="vrau(this, 1)" id="preset" class="form-select" aria-label="presets">
+                        <option selected>Blank</option>
+                        <option value="0">Commoner</option>
+                        <option value="1">Goblin</option>
+                      </select>
                     <p>hp</p>
-                    <input class="form-control m-2" id="HP" type="number">
+                    <input class="form-control m-2" id="HP1" type="number">
                     <p>dado de dano</p>
-                    <select id="DADODANO" class="form-select" aria-label="Dado de dano">
+                    <select id="DADODANO1" class="form-select" aria-label="Dado de dano">
                         <option selected>Selecione um dado</option>
                         <option value="2">2</option>
                         <option value="4">4</option>
@@ -28,11 +34,11 @@
                         <option value="12">12</option>
                       </select>
                     <p>bonus</p>
-                    <input class="form-control m-2" id="DANO" type="number">
+                    <input class="form-control m-2" id="DANO1" type="number">
                     <p>bonus de acerto</p>
-                    <input class="form-control m-2" id="TOHIT" type="number">
+                    <input class="form-control m-2" id="TOHIT1" type="number">
                     <p>CA</p>
-                    <input class="form-control m-2" id="CA" type="number">
+                    <input class="form-control m-2" id="CA1" type="number">
                 </div>
             </div>
             <div class="card">
