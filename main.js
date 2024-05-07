@@ -3,12 +3,14 @@ var stdCombatants = [
     { "NAME": "Goblin", "HP": 7, "DANO": 2, "DADODANO": 6, "TOHIT": 2, "CA": 15 }
 ]
 
+var combatdata = {"actors":1}
+
 
 function calculo() {
     console.log("calculo")
     let combatants = []
     let count = 0;
-    for (i = 1; i < 3; i++) {
+    for (i = 1; i <= combatdata.actors; i++) {
         combatants[(i - 1)] = {
             "HP": document.getElementById("HP" + i).value,
             "DANO": document.getElementById("DANO" + i).value,
@@ -62,7 +64,7 @@ function roll(dice, bonus) {
     return (calc > 0) ? calc : 0;
 }
 
-function autocomplete(e, card) {
+function beb(e, card) {
     let combatantID = e.value
     if (e.value == "Blank") {
         console.log(`Limpar o card ${card}`)
@@ -81,7 +83,41 @@ function autocomplete(e, card) {
     }
 }
 
-function addcombatant(){
+async function addcombatant(){
 
+    combatdata.actors++
+    num = combatdata.actors
+    cardcontainer = document.getElementById("cardcontainer").innerHTML
+    card = `<div class="card col-4" id="card${num}">
+    <div class="card-body">
+        <p>Presets</p>
+        <select onchange="beb(this, ${num})" id="preset${num}" class="form-select" aria-label="presets">
+            <option selected>Blank</option>
+            <option value="0">Commoner</option>
+            <option value="1">Goblin</option>
+          </select>
+        <p>hp</p>
+        <input class="form-control m-2" id="HP${num}" type="number">
+        <p>dado de dano</p>
+        <select id="DADODANO${num}" class="form-select" aria-label="Dado de dano">
+            <option selected>Selecione um dado</option>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+            <option value="12">12</option>
+          </select>
+        <p>bonus</p>
+        <input class="form-control m-2" id="DANO${num}" type="number">
+        <p>bonus de acerto</p>
+        <input class="form-control m-2" id="TOHIT${num}" type="number">
+        <p>CA</p>
+        <input class="form-control m-2" id="CA${num}" type="number">
+    </div>
+</div>`
+document.getElementById("cardcontainer").innerHTML = cardcontainer + card
 }
+
+
 

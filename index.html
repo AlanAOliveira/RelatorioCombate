@@ -15,11 +15,11 @@
         <button onclick="addcombatant()" class="btn btn-success">
             adicionar
         </button>
-        <form class="d-flex flex-row" action="#">
-            <div class="card">
+        <form class="d-flex flex-row flex-wrap" action="#" id="cardcontainer">
+            <div class="card col-4">
                 <div class="card-body">
                     <p>Presets</p>
-                    <select onchange="autocomplete(this, 1)" id="preset" class="form-select" aria-label="presets">
+                    <select onchange="beb(this, 1)" id="preset" class="form-select" aria-label="presets">
                         <option selected>Blank</option>
                         <option value="0">Commoner</option>
                         <option value="1">Goblin</option>
@@ -42,28 +42,6 @@
                     <input class="form-control m-2" id="TOHIT1" type="number">
                     <p>CA</p>
                     <input class="form-control m-2" id="CA1" type="number">
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-body">
-                    <p>hp</p>
-                    <input class="form-control m-2" id="HP2" type="number">
-                    <p>dado de dano</p>
-                    <select id="DADODANO2" class="form-select" aria-label="Dado de dano">
-                        <option selected>Selecione um dado</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
-                      </select>
-                    <p>Bonus de dano</p>
-                    <input class="form-control m-2" id="DANO2" type="number">
-                    <p>bonus de acerto</p>
-                    <input class="form-control m-2" id="TOHIT2" type="number">
-                    <p>CA</p>
-                    <input class="form-control m-2" id="CA2" type="number">
                 </div>
             </div>
         </form>
