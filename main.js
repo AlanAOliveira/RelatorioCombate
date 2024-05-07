@@ -3,6 +3,7 @@ var stdCombatants = [
     { "NAME": "Goblin", "HP": 7, "DANO": 2, "DADODANO": 6, "TOHIT": 2, "CA": 15 }
 ]
 
+
 function calculo() {
     console.log("calculo")
     let combatants = []
@@ -42,14 +43,26 @@ function calculo() {
 }
 
 function D20(bonus) {
-    return (Math.floor(Math.random() * 19 + 1)) + Number(bonus)
+    let calc = (Math.floor(Math.random() * 20 + 1)) + Number(bonus)
+    return (calc > 0) ? calc : 0; 
+}
+
+function tryd20(){
+    let res = 0
+    let count = 0
+    while(res != 1 && count < 100){
+        res = D20(0)
+        console.log(`${res}||${count}`)
+        count++
+    }
 }
 
 function roll(dice, bonus) {
-    return Math.floor(Math.random() * (dice - 1) + 1) + Number(bonus)
+    let calc = Math.floor(Math.random() * (dice) + 1) + Number(bonus)
+    return (calc > 0) ? calc : 0;
 }
 
-function vrau(e, card) {
+function autocomplete(e, card) {
     let combatantID = e.value
     if (e.value == "Blank") {
         console.log(`Limpar o card ${card}`)
@@ -66,5 +79,9 @@ function vrau(e, card) {
         document.getElementById("TOHIT" + card).value = stdCombatants[e.value].TOHIT
         document.getElementById("CA" + card).value = stdCombatants[e.value].CA        
     }
+}
+
+function addcombatant(){
+
 }
 

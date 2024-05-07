@@ -9,14 +9,17 @@
   <body>
     <div class="container">
         <h1>Calculo</h1>
-        <div onclick="calculo()" class="btn btn-success">
+        <button onclick="calculo()" class="btn btn-success">
             calcular
-        </div>
+        </button>
+        <button onclick="addcombatant()" class="btn btn-success">
+            adicionar
+        </button>
         <form class="d-flex flex-row" action="#">
             <div class="card">
                 <div class="card-body">
                     <p>Presets</p>
-                    <select onchange="vrau(this, 1)" id="preset" class="form-select" aria-label="presets">
+                    <select onchange="autocomplete(this, 1)" id="preset" class="form-select" aria-label="presets">
                         <option selected>Blank</option>
                         <option value="0">Commoner</option>
                         <option value="1">Goblin</option>
